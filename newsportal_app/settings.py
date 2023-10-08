@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "clientside",
     "adminside",
     "corsheaders",
-    "rest_framework"
+    "rest_framework",
+    "mptt"
 ]
 
 MIDDLEWARE = [
