@@ -30,9 +30,10 @@ class news(models.Model):
     photo_img = models.ImageField(
         upload_to='photos/news', default='0')
     news_summary = SizedTextField(size_class=2, null=True)
-    date_uploaded = models.DateField(default=datetime.now)
-    time_uploaded = models.TimeField(default=datetime.now)
-    news_category = models.ForeignKey(news_category)
+    date_uploaded = models.DateField(default=datetime.datetime.now)
+    time_uploaded = models.TimeField(default=datetime.datetime.now)
+    news_category = models.ForeignKey(
+        news_category, on_delete=models.DO_NOTHING)
 
     def __str__(self) -> str:
         return f"{self.title} - {self.news_category}"

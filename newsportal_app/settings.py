@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "clientside",
-    "adminside",
     "corsheaders",
     "rest_framework",
     "mptt"
@@ -81,8 +80,12 @@ WSGI_APPLICATION = 'newsportal_app.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'NewsPortal',
+        'USER': 'postgres',
+        'PASSWORD': 'postgresql1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
