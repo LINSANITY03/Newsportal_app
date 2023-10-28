@@ -1,6 +1,9 @@
-from django.db import models
+from ckeditor_uploader.fields import RichTextUploadingField
 from mptt.models import MPTTModel, TreeForeignKey
+
+from django.db import models
 from django_mysql.models import SizedTextField
+
 import datetime
 # Create your models here.
 
@@ -30,6 +33,7 @@ class news(models.Model):
     photo_img = models.ImageField(
         upload_to='photos/news', default='0')
     news_summary = SizedTextField(size_class=2, null=True)
+    description = RichTextUploadingField(default=' ')
     date_uploaded = models.DateField(default=datetime.datetime.now)
     time_uploaded = models.TimeField(default=datetime.datetime.now)
     news_category = models.ForeignKey(
