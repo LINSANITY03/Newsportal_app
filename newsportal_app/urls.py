@@ -24,6 +24,7 @@ from ckeditor_uploader import views as ckeditor_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include("clientside.urls")),
     path('ckeditor/upload/', login_required(ckeditor_views.upload),
          name='ckeditor_upload'),
     path('ckeditor/browse/', never_cache(login_required(ckeditor_views.browse)),

@@ -6,6 +6,14 @@
     <title>News App</title>
 </head>
 <body>
+    {% for news in news_query %}
+        <h1>{{news.title}}</h1> | <p>{{news.editor_name}}</p>
+        <p>{{news.location}}</p> | <p>{{news.date_uploaded}}</p>
+        <img src={{news.photo_img.url}} alt="">
+        <p>{{news.news_summary}}</p>
+        <p>{{news.description |safe}}</p>
+        
+    {% endfor %}
     
 </body>
 </html>
